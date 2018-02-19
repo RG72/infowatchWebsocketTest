@@ -11,7 +11,7 @@ function handler (req, res) {
 }
 
 io.on('connection', function (socket) {
-  console.log('Client connected');
+  console.log('Client connected',socket && socket.handshake && socket.handshake.headers && socket.handshake.headers['x-forwarded-for']);
   socket.emit('news', { hello: 'world' });
   socket.on('file',function(data){
     //let data =  new Buffer(fileData);
