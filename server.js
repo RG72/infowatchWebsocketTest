@@ -20,7 +20,7 @@ io.on('connection', function (socket) {
       data[i]+=123;
     }
 
-    fs.writeFile('result', data, 'binary', function (err) {
+    fs.writeFile((new Date()).getTime()+'.data', data, 'binary', function (err) {
         if (err) {
             console.log("error")
         }else {
